@@ -237,7 +237,7 @@ const FinancialManager: React.FC = () => {
         cardForm={cardForm}
         onClose={() => setShowCardModal(false)}
         onSubmit={handleCardSubmit}
-        onFormChange={(data: React.SetStateAction<CardFormData>) => setCardForm({ ...cardForm, ...data })}
+        onFormChange={(data) => setCardForm({ ...cardForm, ...data })}
         onDeleteCard={deleteCard}
       />
     </div>
