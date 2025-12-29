@@ -33,7 +33,7 @@ const TransactionList: React.FC<TransactionListProps> = ({
       ) : (
         <div className="space-y-3">
           {sortedTransactions.map(transaction => {
-            const card = cards.find(c => c.id === transaction.cardId);
+            const card = cards.find(c => c.id === transaction.card);
             return (
               <TransactionItem
                 key={transaction.id}

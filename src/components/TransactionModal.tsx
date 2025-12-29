@@ -117,8 +117,8 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
             <label className="flex items-center gap-3 text-white cursor-pointer">
               <input
                 type="checkbox"
-                checked={formData.isRecurring}
-                onChange={(e) => onFormChange({ isRecurring: e.target.checked })}
+                checked={formData.is_recurring}
+                onChange={(e) => onFormChange({ is_recurring: e.target.checked })}
                 className="w-5 h-5 rounded accent-purple-500"
               />
               <span>Transação recorrente (mensal)</span>
@@ -127,15 +127,15 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
             <label className="flex items-center gap-3 text-white cursor-pointer">
               <input
                 type="checkbox"
-                checked={formData.isInstallment}
-                onChange={(e) => onFormChange({ isInstallment: e.target.checked })}
+                checked={formData.is_installment}
+                onChange={(e) => onFormChange({ is_installment: e.target.checked })}
                 className="w-5 h-5 rounded accent-purple-500"
               />
               <span>Parcelado</span>
             </label>
           </div>
 
-          {formData.isInstallment && (
+          {formData.is_installment && (
             <div>
               <label className="block text-white mb-2">Número de Parcelas</label>
               <input
@@ -152,14 +152,14 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
             <div>
               <label className="block text-white mb-2">Cartão de Crédito (Opcional)</label>
               <select
-                value={formData.cardId || ''}
-                onChange={(e) => onFormChange({ cardId: e.target.value ? parseInt(e.target.value) : null })}
+                value={formData.card || ''}
+                onChange={(e) => onFormChange({ card: e.target.value ? parseInt(e.target.value) : null })}
                 className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
               >
                 <option value="" className="bg-slate-800">Nenhum</option>
                 {cards.map(card => (
                   <option key={card.id} value={card.id} className="bg-slate-800">
-                    {card.name} (Venc: dia {card.dueDay})
+                    {card.name} (Venc: dia {card.due_day})
                   </option>
                 ))}
               </select>
@@ -176,7 +176,7 @@ const TransactionModal: React.FC<TransactionModalProps> = ({
             </button>
             <button
               type="submit"
-              className="flex-1 bg-linear-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all"
+              className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all"
             >
               {editingId ? 'Salvar' : 'Adicionar'}
             </button>

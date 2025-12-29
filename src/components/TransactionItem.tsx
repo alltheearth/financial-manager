@@ -40,14 +40,14 @@ const TransactionItem: React.FC<TransactionItemProps> = ({
           <div className="flex-1">
             <div className="flex items-center gap-2">
               <h3 className="text-white font-semibold">{transaction.description}</h3>
-              {transaction.isRecurring && (
+              {transaction.is_recurring && (
                 <span className="bg-blue-500/30 text-blue-200 text-xs px-2 py-1 rounded-full">
                   Recorrente
                 </span>
               )}
-              {transaction.isInstallment && (
+              {transaction.is_installment && (
                 <span className="bg-purple-500/30 text-purple-200 text-xs px-2 py-1 rounded-full">
-                  Parcela {transaction.currentInstallment}/{transaction.installments}
+                  Parcela {transaction.current_installment}/{transaction.installments}
                 </span>
               )}
             </div>

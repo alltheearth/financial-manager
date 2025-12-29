@@ -1,5 +1,5 @@
 import api from './api';
-import type {  Transaction,  TransactionFormData, type TransactionStats, type TransactionFilters } from '../types';
+import type {  Transaction,  TransactionFormData, TransactionStats, TransactionFilters } from '../types';
 
 class TransactionService {
   private endpoint = '/transactions';
